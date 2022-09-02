@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import {View, Text, Button} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import MessagesScreen from './screen/stack/MessagesScreen';
 
@@ -13,9 +13,9 @@ import ProfileScreen from './screen/tab/ProfileScreen';
 import ThemeScreen from './screen/tab/ThemeScreen';
 import EditProfileScreen from './screen/tab/EditProfileScreen';
 
-function HomeScreen({ navigation }) {
+function HomeScreen({navigation}) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Home Screen</Text>
       <Button
         title="Go to Details"
@@ -25,14 +25,16 @@ function HomeScreen({ navigation }) {
   );
 }
 
-
-
 function TabStack() {
   return (
-    <Tab.Navigator >
+    <Tab.Navigator>
       <Tab.Screen name="ContactListScreen" component={ContactListScreen} />
       <Tab.Screen name="MessageListScreen" component={MessageListScreen} />
-      <Tab.Screen name="ProfileStack" component={ProfileStack} options={{ headerShown: false }} />
+      <Tab.Screen
+        name="ProfileStack"
+        component={ProfileStack}
+        options={{headerShown: false}}
+      />
     </Tab.Navigator>
   );
 }
@@ -53,8 +55,12 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator >
-        <Stack.Screen name="TabStack" component={TabStack} options={{ headerShown: false }} />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="TabStack"
+          component={TabStack}
+          options={{headerShown: false}}
+        />
         <Stack.Screen name="MessagesScreen" component={MessagesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
